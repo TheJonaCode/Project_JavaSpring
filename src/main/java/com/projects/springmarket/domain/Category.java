@@ -1,16 +1,16 @@
 package com.projects.springmarket.domain;
 
 public class Category {
-    private int categoriaI;
+    private int categoryId;
     private String category;
     private boolean active;
 
-    public int getCategoriaI() {
-        return categoriaI;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoriaI(int categoriaI) {
-        this.categoriaI = categoriaI;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getCategory() {
