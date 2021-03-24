@@ -1,8 +1,7 @@
 package com.projects.springmarket.domain.service;
 
-import com.projects.springmarket.domain.Product;
 import com.projects.springmarket.domain.Purchase;
-import com.projects.springmarket.persistence.CompraRepository;
+import com.projects.springmarket.domain.repository.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,25 +10,19 @@ import java.util.Optional;
 
 @Service
 public class PurchaseService {
+
     @Autowired
-    private CompraRepository compraRepository;
+    private PurchaseRepository purchaseRepository;
 
     public List<Purchase> getAll(){
-        return compraRepository.getAll();
+        return purchaseRepository.getAll();
     }
 
-    public Optional<Purchase> getByClient(int productId){
-        return compraRepository.getByClient(clientId);
+    public Optional<List<Purchase>> getByClient(String clientId){
+        return purchaseRepository.getByClient(clientId);
     }
 
     public Purchase save(Purchase purchase){
-        return compraRepository.save(purchase);
-    }
-
-    public boolean delete(int productId){
-        return getByClient(clientId).map(purchase ->{
-            compraRepository.delete(clientId);
-            return true;
-        }).orElse(false);
+        return purchaseRepository.save(purchase);
     }
 }
