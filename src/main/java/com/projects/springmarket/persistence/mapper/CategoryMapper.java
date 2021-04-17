@@ -1,5 +1,6 @@
 package com.projects.springmarket.persistence.mapper;
 
+
 import com.projects.springmarket.domain.Category;
 import com.projects.springmarket.persistence.entity.Categoria;
 import org.mapstruct.InheritInverseConfiguration;
@@ -12,7 +13,7 @@ public interface CategoryMapper {
     @Mappings({
             @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "descripcion", target = "category"),
-            @Mapping(source = "estado", target = "active"),
+            @Mapping(source = "estado", target = "active")
     })
     Category toCategory(Categoria categoria);
 
